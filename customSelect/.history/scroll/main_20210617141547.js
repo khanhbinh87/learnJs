@@ -1,0 +1,8 @@
+
+var box = document.querySelector('.box')
+window.addEventListener('scroll',function(e){
+    
+    console.log(window.innerHeight + window.offet);
+    
+    
+})

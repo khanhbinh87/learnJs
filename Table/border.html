@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            text-transform: uppercase;
+            padding: 100px;
+           
+        }
+        .wrapper-border{
+            width: 750px;
+            border: 5px solid red;
+            padding: 5px;
+        }
+        .wrapper-border h1{
+            margin: 0;
+            text-align: center;
+            border: 2px solid blue;
+            padding: 3px;
+        }
+        .demo-2{
+            /* 
+                Ox :chieu duong huong sang phai
+                Oy : chieu duong huong xuong duoi
+                Goc tao do 0 --> goc tren cung ben trai
+                box-shadow: 0 0 0 0 #000;
+                    Xoffset
+                    Yoffset
+                    Blur :do mo
+                    Spread
+                    -> bong do vao ben trong inset 
+                        vd:inset 2px 2px 20px 3px #000;
+                    -> ket hop ca 2 
+                        vd: 2px 2px 20px 3px #000,inset 2px 2px 20px 3px #000;
+
+                    -> co the loi dung box-shadow lam border
+                        Xoffset == Yoffset = Blur = 0
+                        border-width = spread
+                box-shadow ko dong vai tro trong viec lam tang kick thuoc phan tu
+
+                outline:2px solid #000;
+                    -> ko dong vai tro trong viec lam tang kick thuoc phan tu
+                    -> vi tri nam o ben ngoai so voi border trung voi vi tri cua box-shadow outset
+             */
+            /* box-shadow: inset 2px 2px 20px 3px #000; */
+            box-shadow: 0 0 0 10px red,inset 0 0 0 5px blue;
+            border:5px solid  #f3b453;
+            outline:5px solid purple;
+            color: #f3b453;
+            width: 750px;
+            padding: 5px;
+            margin: 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper-border">
+        <h1>Thuong hai <br>tuong lai trung hoa hien dai</h1>
+    </div>
+    <h1 class="demo-2">Thuong hai <br>tuong lai trung hoa hien dai</h1>
+
+</body>
+</html>

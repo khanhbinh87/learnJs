@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding:100px;
+
+}
+.box{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: yellow;
+}
+.absolute-class{
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+.absolute-class-2{
+    /* height: 50px; */
+    /* background-color: blue; */
+    border: 1px solid blue;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top:10px;
+    bottom:10px;
+}
+nav{
+    position: fixed;
+    background-color: green;
+    z-index: 1;
+    top:0;
+    left: 0;
+    width:100%;
+}
+/* 
+
+    transform
+        translate -> tinh tien
+        translateX(50%) -> tinh theo width cua ban than no
+        translateY(50%) -> tinh theo height cua ban than no
+
+    positon:fixed 
+        chay theo man hinh
+ */

@@ -1,0 +1,14 @@
+img{
+    max-width: 100%;
+}
+.item{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.title{
+    width: 50%;
+}
+.images{
+    width: 50%;
+}

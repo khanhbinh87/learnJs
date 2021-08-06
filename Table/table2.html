@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       table{
+           border-collapse: separate;/* chi co gia tri separa border-spacing moi co gia tri */
+           width: 100%;
+           border-spacing: 5px;
+       }
+       table,th,td{
+           border:1px solid lightblue;
+           padding: 9px;
+          
+       }
+       tbody tr:nth-child(even){
+            background-color: red;
+       }
+       tbody tr:nth-child(odd){
+        background-color: blue;
+       }
+       /*  
+            table.table-02 : table va table-02 cung cap 
+                vd:<table class="table-02">
+            table .table-02: table-02  la phan tu long trong table
+                vd:
+                <table>
+                    <div clas="table-02"></div>
+                    <p clas="table-02"></p>
+                </table>
+                 <table>
+                    <div class="test">
+                          <div clas="table-02"></div>
+                    </div>
+                </table>
+                ul,ol co thuoc tinh start="100" de hien thi so dau tien 100
+        */
+       
+    </style>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>c</td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>e</td>
+                <td>f</td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="" method="POST"><!-- thuoc tinh action dung de khai bao noi muon gui du lieu len server 
+                                -- thuoc tinh method dung de khai bao phuong thuc cach gui len server
+                                    method="GET" -- truyen tham so qua url ko can bao mat
+                                    method="POST"
+                                    thuoc tinh value chinh la du lieu ma nguoi dung nhap vao du lieu gui len server
+                                    select
+                                    radio: 
+                                        chi duoc phep chon 1 trong nhieu gia tri
+                                    checkbox
+                                        duoc phep chon nhieu gia tri cung luc
+                                    chon gia tri mac dinh cho radio va checkbox ->dung thuoc tinh checked
+                                    mot so the form ko the nao css dc giao dien theo thong thuong:radio,checkbox,select,option
+                                     -- muon css phai lam css thong qua phan tu khac nhu:div,label,...
+                                        nguoi dung ve mat giao dien se thay div , an di radio va checkbox ve hoat dong minh phai viet 
+                                        js de ket noi du lieu nguoi dung thao tac voi div select
+                                -->
+        <div class="input-group">
+            <input type="text" placeholder="Nhap ho ten" name="full-name">
+        </div>
+        <div class="input-group">
+                <input type="email" placeholder="Nhap email" name="gmail">
+        </div>
+        <div class="input-group">
+                <input type="radio" name="gender" value="0"><label>Nam</label>
+                <input type="radio" name="gender" value="1"><label>Nu</label>
+        </div>
+        <div class="input-group">
+                <input type="radio" name="country" value="hn" checked><label>Ha noi</label>
+                <input type="radio" name="country" value="hcm">  <label >TPhcm</label>
+        </div>
+        <div class="input-group">
+                <input type="checkbox" name="subject" value="toan" checked><label>Toan</label>
+                <input type="checkbox" name="subject" value="ly" checked>  <label >Ly</label>
+        </div>
+        <div class="input-group">
+                <select name="country">
+                    <option value="1">Ha noi 1</option>
+                    <option value="2">Ha noi 2</option>
+                    <option value="3" selected>Ha noi 3</option>
+                </select>
+        </div>
+       
+        <div class="input-group">
+            <input type="submit" value="Dang nhap">
+        </div>
+    </form>
+</body>
+</html>

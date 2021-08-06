@@ -1,0 +1,220 @@
+/* 
+pointer-events:none => ko tuong tac dc phan tu (van thay)
+display:none => an khoi html ,ko chiem dien tich ,ko tuong tac dc
+opacity: 0 => an ve mat giao dien ,van chiem dien tich , tuong tac dc 
+visibility:hidden => ko thay tren giao dien ,van chiem dien tich ,ko tuong tac dc
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:focus{
+    outline: none;
+}
+body {
+  padding: 100px;
+  min-height: 2000px;
+}
+/* .demo{
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    background-color: red;
+    margin-bottom: 30px;
+} */
+.box-1,
+.box-2,
+.box-3,
+.box-6,
+.box-7,
+.box-8,
+.box-9 {
+  width: 150px;
+  height: 150px;
+  background-color: yellow;
+  position: relative;
+  margin-bottom: 30px;
+}
+/* .line{
+    background-color:red;
+    height: 5px;
+    width: 0px;
+    transition: all 0.3s linear;
+}
+.box-1:hover .line{
+    width: 100%;
+} */
+.box-1::before {
+  height: 5px;
+  position: absolute;
+  background-color: red;
+  content: "";
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  transition: all 0.3s ease;
+}
+.box-1:hover::before {
+  width: 100%;
+}
+.box-2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  background-color: red;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+.box-2:hover::before {
+  right: 0;
+}
+.box-6::before {
+  content: "";
+  position: absolute;
+  border: 3px solid red;
+  opacity: 0;
+  /* background-color: red; */
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  transition: all 0.3s ease;
+}
+.box-6:hover::before {
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  opacity: 1;
+}
+
+.box-7::before {
+  content: "";
+  left: 50%;
+  right: 50%;
+  border-top: 5px solid red;
+  border-bottom: 5px solid red;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.box-7:hover::before {
+  left: 0;
+  right: 0;
+}
+.box-7::after {
+  content: "";
+
+  border-left: 5px solid red;
+  border-right: 5px solid red;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.box-7:hover::after {
+  top: 0;
+  bottom: 0;
+}
+.box-8::before,
+.box-8::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: red;
+}
+.box-8::before {
+  left: 0;
+  right: 100%;
+  height: 5px;
+}
+.box-8:hover::before {
+  right: 0;
+  transition: all 1s ease;
+}
+.box-8::after {
+  bottom: 100%;
+  right: 0;
+  width: 5px;
+}
+.box-8:hover::after {
+  bottom: 0;
+  transition: all 1s 1s;
+}
+.box-8 span::before,
+.box-8 span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: red;
+}
+.box-8 span::before {
+  left: 100%;
+  right: 0;
+  height: 5px;
+}
+.box-8:hover span::before {
+  transition: all 1s 2s;
+  left: 0;
+}
+.box-8 span::after {
+  left: 0;
+  top: 100%;
+  width: 5px;
+}
+.box-8:hover span::after {
+  top: 0;
+  transition: all 1s 3s;
+}
+.box-9::before {
+  content: "";
+  position: absolute;
+  /* top:0; */
+  /* bottom:0; */
+  left: 0;
+  height: 0;
+  width: 0;
+  right: 0;
+  opacity: 0;
+  border-top: 5px solid red;
+  border-right: 5px solid red;
+}
+.box-9:hover::before {
+  transition: width 1s, height 1s 1s;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.box-9::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 5px solid blue;
+  border-left: 5px solid blue;
+  opacity: 0;
+}
+
+.box-9:hover::after{
+    transition:width 1s 2s ,height 1s 3s,opacity 0s 2s;
+    width:100%;
+    height: 100%;
+    opacity: 1;
+}

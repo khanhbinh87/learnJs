@@ -1,0 +1,23 @@
+img{
+    max-width: 100%;
+    width: 50%;
+    display: inline-block;
+}
+.slider .item{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   /* border:1px solid red; */
+
+}
+.slider .title{
+    width: 20px;
+    border:1px solid red
+}
+.slider .images{
+    width: calc(100% - 20px);
+}
+body{
+    background-color: #ccc;
+}

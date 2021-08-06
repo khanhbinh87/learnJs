@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    margin:50px auto;
+    width: 500px;
+}
+body{
+    padding: 50px;
+}
+.custom-select {
+    margin-bottom: 40px;
+    
+}
+
+
+.wrapper-selected{
+    width: 250px;
+    font-family:sans-serif;
+    position: relative;
+}
+.wrapper-selected > .selected{
+    border:1px solid #ccc;
+    padding: 8px 15px;
+    background-color: #ccc;
+    box-shadow:1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.wrapper-selected > .list-options{
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99;
+}
+.wrapper-selected.open > .list-options{
+    opacity: 1;
+    pi
+}
+.wrapper-selected > .list-options > li{
+    padding: 8px 15px;
+    background-color: #cdcdcd;
+    border:1px solid #8d8d8d;
+    margin-top: -1px;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+}
+.wrapper-selected > .list-options > li:hover{
+    background-color: #999;
+}

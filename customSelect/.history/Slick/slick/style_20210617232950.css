@@ -1,0 +1,27 @@
+img{
+    max-width: 100%;
+    
+}
+/* .slider .item{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   /* border:1px solid red; */
+
+/* }  */
+/* .slider .title{
+    width: 50%;
+
+
+}
+.slider .images{
+
+    width: 100%;
+}
+/* .slider img{
+    display:block;
+} */ */
+body{
+    background-color: #ccc;
+}

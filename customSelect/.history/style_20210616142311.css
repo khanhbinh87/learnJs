@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    margin:50px auto;
+    width: 500px;
+}
+body{
+    padding: 50px;
+}
+.custom-select {
+    margin-bottom: 40px;
+    
+}
+
+
+.wrapper-selected{
+    width: 250px;
+    font-family:sans-serif;
+    position: relative;
+}
+.wrapper-selected > .selected{
+    border:1px solid #ccc;
+    padding: 8px 15px;
+    background-color: #ccc;
+}
+.wrapper-selected > .list-options{
+    list-style: none;
+    position: absolute;
+}
+.wrapper-selected > .list-options > li{
+    padding: 8px 15px;
+    background-color: #cdcdcd;
+    border:1px solid #8d8d8d;
+    margin-top: -1px;
+    cursor: pointer;
+    transition: all 0.5s;
+    position:absolute;
+    w100%   
+}
+.wrapper-selected > .list-options > li:hover{
+    background-color: #999;
+}

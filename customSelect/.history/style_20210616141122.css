@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    margin:50px auto;
+    width: 500px;
+}
+body{
+    padding: 50px;
+}
+.custom-select {
+    margin-bottom: 40px;
+    
+}
+.selected{
+    margin-bottom: 10px;
+}
+ul li + li{
+    margin-top: 10px;
+}
+.wrapper-selected{
+    width: 250px;
+}
+.wrapper-selected > .selected{
+    border:1px solid #ccc;
+    padding: 8px 10px;
+}
+.wrapper-selected > .list-options > li{
+    padding: 8px 15px;
+}

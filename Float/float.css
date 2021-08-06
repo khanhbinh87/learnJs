@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding:100px;
+}
+.row{
+    background-color: yellow;
+}
+.row .item{
+    width: 25%;
+    float: left;
+    margin-bottom: 30px;
+}
+.row .item::first-letter{
+    font-size:40px;
+    color: yellow;
+}
+.row .item:nth-child(even){
+    background-color:blue;
+    color: white;
+}
+.row .item:nth-child(odd){
+    background-color:red;
+
+}
+.row:after{
+    display: block;
+    content:"";
+    clear: both;
+}
+
+.text-center{
+    text-align: center;
+    margin-top:20px;
+}
+/* 
+
+    float:left | right |
+    clear thuong dat o phia sau phan tu float cuoi cung
+*/

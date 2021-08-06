@@ -1,0 +1,1 @@
+var listCounters = Array.from(document.quer)

@@ -1,0 +1,13 @@
+img{
+    max-width: 100%;
+}
+.item{
+    display: flex;
+
+}
+.title{
+    width: 50%;
+}
+.images{
+    width: 50%;
+}

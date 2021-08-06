@@ -1,0 +1,3 @@
+$.ajax({
+    type:"Get"
+})

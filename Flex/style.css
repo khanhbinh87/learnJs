@@ -1,0 +1,258 @@
+*{
+    margin:0px;
+    padding: 0;
+    box-sizing: border-box
+}
+.container{
+    width: 1170px;
+    margin: 0 auto;
+    padding: 100px 0;
+    min-height: 2000px;
+}
+
+/*  
+    table
+        tr -> display:table-row
+            td td td td -> display:table-cell
+        tr
+            td td td td
+        tr
+            td td td td
+
+    flex-wrap:xuong dong
+            nowrap ->default
+            wrap
+            wrap-reverse
+
+    flex-direction: huong
+            row -> huong tu trai sang phai -> default -> display:inline-block
+            column -> huong tu tren xuong duoi -> display block
+            row-reverse
+            column-reverse
+    direction:rtl ,ltr
+
+
+    justify-content -> can dong theo chieu ngnag : block ,inline-block
+            flex-start ->  giong text-align left
+            flex-end ->  giong text-align right
+            center ->  giong text-align center
+            space-between
+            space-round (khoang trang 2 dau bang 1/2 khoang trang o  giua)
+            space-evenly(chia deu )
+
+
+
+    align-content (can dong toan bo noi dung) giong display:table-cell can dong theo chieu doc nhung noi dung nam trong
+        column do
+            flex-start
+            flex-end
+            center
+            stretch
+            space-between
+            space-around
+
+    align-items(giong display:inline-block)
+            flex-start
+            flex-end
+            center
+            stretch
+            baseline
+
+
+    flex-basis -> phu thuoc huong(row column)
+         neu direction la row ->flex basis:50% > dinh nghi kich thuoc giong nhu width:50%
+         neu direction la column->flex basis:50%> dinh nghi kich thuoc giong nhu height:50%
+
+
+
+
+*/
+
+.flex{
+    display: flex;
+}
+.flex + .flex{
+    margin-top: 100px;
+}
+.flex .item{
+    width: 25%;
+    margin-bottom: 30px;
+}
+.flex .item::first-letter{
+    font-size: 30px;
+    color: red;
+}
+.flex .item:nth-child(even){
+    background-color: blue;
+    color:#fff;
+}
+.flex .item:nth-child(odd){
+    background-color: yellow;
+
+}
+.f-nowrap{
+    flex-wrap: nowrap;
+}
+.f-wrap{
+    flex-wrap: wrap;
+}
+.f-wrap-re{
+    flex-wrap: wrap-reverse;
+}
+
+.f-dir-row{
+    flex-direction: row;
+}
+.f-dir-col{
+    flex-direction: column;
+}
+.f-dir-row-re{
+    flex-direction: row-reverse;
+}
+.f-dir-col-re{
+    flex-direction: column-reverse;
+}
+
+
+.jt-start{
+    justify-content: flex-start;
+}
+.jt-end{
+    justify-content: flex-end;
+}
+.jt-center{
+    justify-content: center;
+}
+.jt-space-between{
+    justify-content: space-between
+}
+.jt-space-around{
+    justify-content: space-around;
+}
+.jt-space-evenly{
+    justify-content: space-evenly;
+}
+
+.ac-start{
+    align-content: flex-start;
+}
+.ac-end{
+    align-content: flex-end;
+}
+.ac-center{
+    align-content: center;
+}
+.ac-space-between{
+    align-content: space-between;
+}
+.ac-space-around{
+    align-content: space-around;
+}
+
+
+.ai-start{
+    align-items: flex-start;
+}
+.ai-end{
+    align-items: flex-end;
+}
+.ai-center{
+    align-items: center;
+}
+.ai-stretch{
+    align-items: stretch;
+}
+.ai-baseline{
+    align-items: baseline;
+}
+
+.demo-1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 100px;
+    justify-content: center;
+}
+.demo-1 .item{
+    padding-left:15px;
+    padding-right: 15px;
+    width: 25%;
+} 
+.demo-1 .item:not(:nth-child(-n + 4)){
+    margin-top:30px;
+}
+.product{
+    border: 4px solid #000;
+    height: 100%;
+    background-color: yellow;
+    color: #000;
+}
+.demo-2{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+}
+.demo-2 .item{
+    border: 5px solid #000;
+    flex-basis: 33.3333%; 
+}
+.d-flex{
+    display:flex;
+}
+.demo-3 .col:nth-child(even){
+    background-color:blue
+}
+.demo-3 .col:nth-child(odd){
+    background-color: yellow;
+}
+.demo-3{
+    margin-top: 100px;
+    height: 50vh;
+    /* display: flex; */
+    background-color: yellow;
+}
+.demo-3 .col{
+    width: 33.3333%;
+    /* display: flex; */
+}
+.demo-3 .col > *{
+    flex-basis: 50%;
+}
+/* .demo-3 .image-col{
+    display: flex; 
+} */
+
+.demo-3 .basis-50 > *{
+    flex-basis: 50%;
+}
+.demo-3 .image{
+    position: relative;
+    cursor: pointer;
+}
+.demo-3 img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.demo-3 .image:before{
+    content:"";
+    position: absolute;
+    top:15px;
+    left:15px;
+    right:15px;
+    bottom:15px;
+    z-index: 10;
+    background-color: rgba(0, 139, 139, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.demo-3 .image:hover:before{
+    background-color: rgba(0, 139, 139, 0.7);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+   
+}

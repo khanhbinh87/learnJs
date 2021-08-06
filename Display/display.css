@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, span{
+    display: inline-block;
+}
+body{
+    padding:100px;
+}
+/* 
+
+    Block 
+        1.width mac dinh luon luon = 100% cua parent
+        2.Co the thay doi widh , height bang css
+        3.Bat ke width la bao nhieu luon nam 1 minh tren 1 hang
+    Inline
+        1.Width mac dinh = noi dung cua no
+        2.ko thay doi dc width ,height
+            paddingva margin chi co anh huong ben left va right
+        3.co the dung chung hang voi nhung element inline khac
+
+
+    Display :block -> ko ho tro theo chieu doc    
+
+            .left:mac dinh
+            .center:margin-left= margin-right = auto
+            .right:margin-left:auto ; margin-right:0
+
+    Display:inline-block
+            -> do rong mac dinh giong inline = voi noi dung ben trong
+            -> co the nam cung hang voi nhung phan tu inline khac
+            -> thay doi dc width va height giong voi block -> dung de chia column
+
+
+
+*/
+.block{
+    display:block;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+.text-center{
+    text-align: center;
+    margin-top: 100px;
+}
+.block.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.block.right{
+    margin-left: auto;
+    margin-right: 0;
+}
+.row{
+    background-color: yellow;
+    font-size:0;
+}
+.row .item{
+    width: 25%;
+    display: inline-block;
+    font-size:16px;
+    margin-bottom: 30px;
+}
+.row .item::first-letter{
+    font-size: 30px;
+    color:red;
+}
+.row .item:nth-child(even){
+    background-color: purple;
+    color:#bef321;
+}
+.row .item:nth-child(odd){
+    color:white;
+    background-color: #673ab7;
+}
+
+.banner{
+    margin-top:30px;
+    background-color:pink
+}
+.parent{
+    background-color: pink;
+    font-size:0;
+}
+.parent .inline-block{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background-color: red;
+}
+.parent.center{
+    text-align: center
+}
+.parent.right{
+    text-align: right
+}

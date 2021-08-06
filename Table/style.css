@@ -1,0 +1,474 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:after ,*:before{
+    box-sizing: border-box;
+}
+a , span{
+    display: inline-block;
+}
+img{
+    max-width: 100%;
+}
+/* 
+    Selector cua CSS
+        - Selector 1 > selector 2{ }
+            body > p{}
+            . container h1 p > p{}
+            . container h1 p > p span {}
+            + Phan tu cuoi cung cua selector 1 phai la cha gan nhat
+
+         - Selector 1 + Selector 2 {}   
+            + selector 1 phia la anh chi em cua selector 2 -> cung parent
+            + selector 2 phai la phan tu phia sau lien ke voi selector 1
+
+        - Selector 1 ~ Selector 2 {}   
+            + selector 1 phia la anh chi em cua selector 2 -> cung parent
+            + selector 2 phai la "Nhieu" phan tu phia sau voi selector 1
+
+        - Attribute selector
+
+        selector::before{}
+        selector::after{}
+        --> de kich hoat dc before,after 
+            ::before{
+                content:""
+            }
+        after, before la 1 phan tu html co tinh chat inline
+         tu chu dong code cho before, after thanh the div bang cach dua ve display:block
+
+        selector:hover{} => bat su kien re chuot  vao phan tu do 
+         
+        transition: 
+                + ten-thuoc-tinh-css-thay-doi-trang-thai ( ->qui dinh do muot ma cua hieu ung)
+                + so-giay cach-hieu-ung-chay
+                + gia-tri-delay => quy dinh do tre hieu ung
+                + cach-hieu-ung-chay -> neu ko khai bao thi mac dinh linear(tuyen tinh) chay deu
+
+            
+
+
+
+
+*/
+.container{
+    width:750px;
+    margin:0 auto;
+}
+.container .classABC .class-2 > p span {
+    color: red;
+}
+.demo-1{
+    border: 1px solid #000;
+    padding:15px;
+}
+.demo-1 > p + p {
+    color:red;
+}
+.demo-1 > p ~ p {
+    background-color:yellow;
+}
+.menu{
+    margin-top: 40px;
+}
+/*  .menu li{
+        border-bottom:1px solid #000;
+    }
+    .menu li:last-child{
+        border-bottom:0
+    }
+*/
+.menu li +li{
+    border-top:1px solid #000;
+}
+[class*="demo-"]{
+    /* background-color: purple; */
+    margin-top:15px;
+    padding:10px;
+    border: 1px solid #000;
+}
+.demo-4:before{
+    content: "Before";
+    display: block;
+}
+.demo-4:after{
+    content: "After";
+}
+[class*="block-"]{
+    width: 200px;
+    height: 200px ;
+    background-color: yellow;
+    margin-top:100px;
+    position: relative;
+}
+
+.block-1:before{
+    content: "";
+    display: block;
+    width:0;
+    height: 5px;
+    background-color: red;
+    transition: all 0.5s linear
+}
+.block-1:hover:before{
+    width: 100%;
+   
+}
+.block-2:before , .block-2:after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 5px;
+    background-color: red;
+    transition: all 0.5s ease;
+}
+.block-2:before {
+    
+    top: 0;
+    left: 0;
+    right: 100%;
+   
+   
+}
+.block-2:after{
+   
+    bottom: 0;
+    left: 100%;
+    right: 0;
+  
+   
+}
+.block-2:hover:before{
+    right: 0;
+}
+.block-2:hover:after{
+    left: 0;
+}
+.block-3:before, .block-3:after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 5px;
+    background-color: red;
+    transition: all 0.3s ease;
+    left:50%;
+    right: 50%;
+}
+.block-3:before{
+    top: 0;
+}
+.block-3:after{
+    bottom: 0;
+} 
+.block-3:hover:before , .block-3:hover:after{
+    left:0;
+    right:0;
+}
+
+.block-4:before, .block-4:after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 5px;
+    background-color: red;
+    transition: all 0.3s ease;
+    left:50%;
+    right: 50%;
+}
+.block-4:before{
+    top: 0;
+}
+.block-4:after{
+    bottom: 0;
+} 
+.block-4:hover:before , .block-4:hover:after{
+    left:0;
+    right:0;
+}
+.line{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.line:before, .line:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5px;
+    background-color: red;
+    transition: all 0.3s ease;
+    top:50%;
+    bottom:50%;
+   
+}
+
+.line:before{
+    left:0;
+}
+.line:after{
+    right:0;
+}
+
+
+.line:hover:before , .line:hover:after{
+    top:0;
+    bottom:0;
+}
+.block-5:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right:50%;
+    border-top:5px solid red;
+    border-bottom:5px solid red;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.block-5:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right:0;
+    border-left:5px solid red;
+    border-right:5px solid red;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+.block-5:hover:after, .block-5:hover:before{
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+}
+.block-6:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50%;
+    right: 50%;
+    bottom: 50%;
+    border:0px solid blue;
+    transition: all 0.3s ease;
+}
+.block-6:hover:before{
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    border-width: 5px;
+}
+.btn-1{
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #333;
+    color:#fff;
+    border:2px solid #333;
+    border-radius: 30px;
+    margin-top:30px;
+    transition: all .3s ease;
+    transition-delay: 2s;
+    outline: none;
+
+}
+.btn-1:hover{
+    color: #333;
+    background-color: #fff;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.block-7:before{
+    content:"";
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    opacity:0;
+    border-top:5px solid red;
+    border-right:5px solid red;
+    
+}
+.block-7:hover:before,.block-7:hover:after{
+    width: 100%;
+    height:100%;
+    opacity:1;
+   
+}
+.block-7:hover:before{
+    transition: width 1s linear , height 1s linear 1s ;
+}
+.block-7:hover:after{
+    transition: width 1s linear 2s, height 1s linear 3s , opacity 0s linear 2s;
+}
+.block-7:after{
+    content:"";
+    display: block;
+    position: absolute;
+    bottom:0;
+    right:0;
+    width: 0;
+    height: 0;
+    border-bottom:5px solid red;
+    border-left:5px solid red;
+    opacity:0;
+    
+}
+.btn-2{
+    padding: 15px 40px;
+    font-size: 16px;
+    background-color: #333;
+    color:#fff;
+    border:2px solid #333;
+    transition: all .3s ease;
+    position: relative;
+    overflow: hidden;
+
+}
+.btn-2::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left:0px;
+    top:0px;
+    transition: all 0.6s ease;
+    pointer-events: none; 
+    width:100%;
+    height:30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: rotate(-45deg) translate(-80px,-80px)
+}
+.btn-2:hover:before{
+    top:30px;
+    transform: rotate(-45deg) translate(80px,80px)
+}
+
+.btn-3{
+    padding: 15px 40px;
+    font-size: 16px;
+    background-color: #fff;
+    color:#333;
+    border:2px solid #333;
+  
+    position: relative;
+    transition: all 0.5s ease;
+}
+.btn-3:before{
+    content:"";
+    display: block;
+    position: absolute;
+    top:5px;
+    bottom:5px;
+    left:0;
+    right: 100%;
+    background-color: #333;
+    transition: all 0.5s ease;
+    /* cach khac ko dung right:100% */
+    /* transform: translateX(100%); */
+}
+.btn-3:hover:before{
+    right:0;
+    /* transform: translateX(0); */
+}
+.btn-3:hover{
+    color: #fff;
+}
+.btn-3 span{
+    position: relative;
+
+}
+.circle{
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-top:50px;
+    border:3px solid #333;
+    line-height: 77px;
+    box-shadow: inset 0 0 0 0 #333;
+    transition: all .5s ease;
+}
+.circle:after{
+    content: "\f39f";
+    font-family: "Font Awesome 5 Brands";
+}
+.circle:hover{
+    color: #fff;
+    box-shadow: inset 0 0 0 45px #333;
+}
+.circle-2{
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-top:50px;
+    border:3px solid #333;
+    line-height: 77px;
+    box-shadow: 0 0 0 0 rgba(51, 51, 51, 1);
+    
+}
+.circle-2:after{
+    content: "\f39f";
+    font-family: "Font Awesome 5 Brands";
+}
+.circle-2:hover{
+    box-shadow: 0 0 0 30px rgba(51, 51, 51, 0);
+    transition: all .5s ease;
+}
+.circle-3{
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-top:50px;
+    border:3px solid #333;
+    line-height: 77px;
+    box-shadow: 0 0 0 0 rgba(51, 51, 51, 1)
+    
+}
+.circle-3:after{
+    content: "\f39f";
+    font-family: "Font Awesome 5 Brands";
+    position: relative;
+    color: #333;
+    transition: all .5s ease;
+}
+.circle-3:hover:after{
+    color: #fff;
+}
+.circle-3:hover{
+    
+    box-shadow: 0 0 0 30px rgba(51, 51, 51, 0);
+    transition: all .5s ease;
+}
+.circle-3:before{
+    content: "";
+    position :absolute;
+    top:-2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    box-shadow:inset 0 0 0 0 #333;
+}
+.circle-3:hover:before{
+    box-shadow:inset 0 0 0 45px #333;
+}

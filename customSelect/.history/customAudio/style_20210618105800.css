@@ -1,0 +1,19 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+.container{
+    width: 1170px;
+    margin: 100px auto;
+}
+.custom-audio{
+    width: 500px;
+    padding: 15px;
+    border: 2px solid #555;
+}
+.custom-audio .play , .custom-audio .pause{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #555;
+    bd
+}

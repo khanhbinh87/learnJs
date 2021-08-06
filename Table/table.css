@@ -1,0 +1,30 @@
+/* 
+    table ,table-cell,table-row
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 100px;
+}
+.banner-table{
+  background-color: yellow;
+  height: 100vh;
+  display: table;
+  width: 100%;
+}
+.table-cell{
+  display: table-cell;
+  background-color: pink;
+  text-align: center;
+  vertical-align: middle;
+}
+.content{
+  width: 650px;
+  display: inline-block;
+  background-color: #deaff8;
+  text-align:center;
+}
